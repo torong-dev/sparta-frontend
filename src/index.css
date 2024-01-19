@@ -2,11 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto.ttf") format("truetype");
+  unicode-range: U+0041-005A, U+0061-007A; /* 영문 대소문자 */
+}
+
+@font-face {
+  font-family: "NotoSansKR";
+  src: url("./fonts/NotoSansKR.ttf") format("truetype");
+  unicode-range: U+AC00-D7A3; /* 한글 */
+}
+
+@font-face {
+  font-family: "SpoqaHanSansNeo";
+  src: url("./fonts/SpoqaHanSansNeo.otf") format("opentype");
+  unicode-range: U+0030-0039, U+0020-002F, U+003A-0040, U+005B-0060, U+007B-007E; /* 숫자, 특수문자 */
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "NotoSansKR", "Roboto",
+    "SpoqaHanSansNeo", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
