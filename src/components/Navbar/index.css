@@ -10,27 +10,39 @@
   @apply max-w-[75rem] h-[2.625rem] mx-auto flex justify-between items-center text-sm text-gray-400;
 }
 
-.navbar__services__btn__group {
-  @apply flex max-w-full;
-}
-
 .navbar__services__hire__btn {
   @apply flex mx-4;
+}
+
+.navbar__services__btn__group {
+  @apply flex max-w-full;
 }
 
 .navbar__services__center__btn {
   @apply w-16 border-r border-gray-500;
 }
 
-.navbar__services_crp {
+.navbar__services_corp {
   @apply relative inline-block;
 }
 
-.navbar__services__crp__btn {
+.navbar__services__corp__btn {
   @apply flex items-center max-w-full ml-3;
 }
 
-.navbar__line {
+.navbar__toggle-dropdown {
+  @apply absolute top-full right-0 flex flex-col w-[9.75rem] mt-2 bg-zinc-900 border border-gray-700 rounded-lg shadow-xl shadow-zinc-900/50;
+}
+
+.navbar__toggle-dropdown__contents {
+  @apply block p-4 text-gray-300;
+}
+
+.navbar__toggle-dropdown__line {
+  @apply w-[9.625rem] border-b border-gray-700;
+}
+
+.navbar__section__line {
   @apply w-full border-b border-gray-700;
 }
 
@@ -42,7 +54,7 @@
   @apply flex items-center;
 }
 
-.navbar__logo {
+.navbar__menu__logo {
   @apply w-36 mr-4;
 }
 
@@ -70,22 +82,10 @@
   @apply ml-2 p-1 text-xs border-none bg-gray-700 rounded-md;
 }
 
-.navbar__login__btn {
+.navbar__menu__login__btn {
   @apply border-2 border-rose-700 rounded-lg px-3 py-2 text-sm font-semibold text-gray-300;
 }
 
-.navbar__login__btn:hover {
+.navbar__menu__login__btn:hover {
   @apply bg-rose-700;
-}
-
-.navbar__toggle-dropdown {
-  @apply absolute top-full right-0 flex flex-col w-[9.75rem] mt-2 bg-zinc-900 border border-gray-700 rounded-lg shadow-xl shadow-zinc-900/50;
-}
-
-.navbar__toggle-dropdown__contents {
-  @apply block p-4 text-gray-300;
-}
-
-.navbar__toggle-dropdown__line {
-  @apply w-[9.625rem] border-b border-gray-700;
 }

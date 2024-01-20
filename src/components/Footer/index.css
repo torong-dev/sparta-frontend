@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.footer__section {
+  @apply bg-zinc-900 border-b border-gray-700;
+}
+
+.footer__section__menu {
+  @apply flex items-center justify-between;
+}
