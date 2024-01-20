@@ -7,27 +7,35 @@
 }
 
 .navbar__services {
-  @apply max-w-6xl mx-auto flex justify-between items-center h-10 text-sm text-gray-400;
+  @apply max-w-[75rem] h-[2.625rem] mx-auto flex justify-between items-center text-sm text-gray-400;
 }
 
 .navbar__services__btn__group {
-  @apply max-w-full;
+  @apply flex max-w-full;
 }
 
 .navbar__services__hire__btn {
-  @apply mx-4;
+  @apply flex mx-4;
 }
 
 .navbar__services__center__btn {
-  @apply w-20 border-r border-gray-500;
+  @apply w-16 border-r border-gray-500;
+}
+
+.navbar__services_crp {
+  @apply relative inline-block;
 }
 
 .navbar__services__crp__btn {
-  @apply max-w-full ml-3;
+  @apply flex items-center max-w-full ml-3;
+}
+
+.navbar__line {
+  @apply w-full border-b border-gray-700;
 }
 
 .navbar__menu {
-  @apply max-w-6xl mx-auto flex justify-between items-center;
+  @apply max-w-[75rem] h-[3.75rem] mx-auto flex justify-between items-center;
 }
 
 .navbar__menu__items {
@@ -38,18 +46,46 @@
   @apply w-36 mr-4;
 }
 
+.navbar__menu__catalog__btn {
+  @apply flex justify-center items-center px-3 py-2 rounded-lg text-brand font-semibold;
+}
+
+.navbar__menu__catalog__btn:hover {
+  @apply bg-rose-700 text-gray-50;
+}
+
 .navbar__menu__btn {
-  @apply flex justify-center items-center mr-4 p-2 rounded-lg;
+  @apply flex justify-center items-center px-3 py-2 rounded-lg font-semibold;
 }
 
 .navbar__menu__btn:hover {
   @apply bg-rose-700;
 }
 
+.navbar__menu__btn:hover .navbar__menu__btn__txt {
+  @apply bg-rose-800;
+}
+
 .navbar__menu__btn__txt {
-  @apply text-xs;
+  @apply ml-2 p-1 text-xs border-none bg-gray-700 rounded-md;
 }
 
 .navbar__login__btn {
-  @apply border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-300;
+  @apply border-2 border-rose-700 rounded-lg px-3 py-2 text-sm font-semibold text-gray-300;
+}
+
+.navbar__login__btn:hover {
+  @apply bg-rose-700;
+}
+
+.navbar__toggle-dropdown {
+  @apply absolute top-full right-0 flex flex-col w-[9.75rem] mt-2 bg-zinc-900 border border-gray-700 rounded-lg shadow-xl shadow-zinc-900/50;
+}
+
+.navbar__toggle-dropdown__contents {
+  @apply block p-4 text-gray-300;
+}
+
+.navbar__toggle-dropdown__line {
+  @apply w-[9.625rem] border-b border-gray-700;
 }
