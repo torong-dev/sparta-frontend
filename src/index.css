@@ -27,7 +27,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
-  @apply bg-zinc-900 text-gray-50;
+  @apply bg-zinc-800 text-gray-50;
 }
 
 code {

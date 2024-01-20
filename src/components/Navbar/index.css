@@ -1,3 +1,55 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.navbar__section {
+  @apply bg-zinc-900 border-b border-gray-700;
+}
+
+.navbar__services {
+  @apply max-w-6xl mx-auto flex justify-between items-center h-10 text-sm text-gray-400;
+}
+
+.navbar__services__btn__group {
+  @apply max-w-full;
+}
+
+.navbar__services__hire__btn {
+  @apply mx-4;
+}
+
+.navbar__services__center__btn {
+  @apply w-20 border-r border-gray-500;
+}
+
+.navbar__services__crp__btn {
+  @apply max-w-full ml-3;
+}
+
+.navbar__menu {
+  @apply max-w-6xl mx-auto flex justify-between items-center;
+}
+
+.navbar__menu__items {
+  @apply flex items-center;
+}
+
+.navbar__logo {
+  @apply w-36 mr-4;
+}
+
+.navbar__menu__btn {
+  @apply flex justify-center items-center mr-4 p-2 rounded-lg;
+}
+
+.navbar__menu__btn:hover {
+  @apply bg-rose-700;
+}
+
+.navbar__menu__btn__txt {
+  @apply text-xs;
+}
+
+.navbar__login__btn {
+  @apply border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-300;
+}
