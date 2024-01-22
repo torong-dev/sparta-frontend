@@ -6,6 +6,12 @@ module.exports = {
       colors: {
         brand: "#E8344D",
       },
+      aspectRatio: {
+        image: 275 / 175,
+      },
+      minWidth: {
+        lectureImg: "270px",
+      },
     },
   },
   plugins: [],
