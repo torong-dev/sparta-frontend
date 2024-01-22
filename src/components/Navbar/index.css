@@ -6,6 +6,10 @@
   @apply bg-zinc-900 border-b border-gray-700;
 }
 
+.navbar__section__line {
+  @apply w-full border-b border-gray-700;
+}
+
 .navbar__services {
   @apply max-w-[75rem] h-[2.625rem] mx-auto flex justify-between items-center text-sm text-gray-400;
 }
@@ -40,10 +44,6 @@
 
 .navbar__toggle-dropdown__line {
   @apply w-[9.625rem] border-b border-gray-700;
-}
-
-.navbar__section__line {
-  @apply w-full border-b border-gray-700;
 }
 
 .navbar__menu {

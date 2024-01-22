@@ -4,8 +4,8 @@ import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import "../Navbar/index.css";
 
 // 메뉴 버튼에 대한 컴포넌트
-const NavbarBtn = ({ to, children }) => (
-  <Link to={to}>
+const NavbarBtn = ({ to, children, openInNewTab }) => (
+  <Link to={to} target={openInNewTab ? "_blank" : "_self"}>
     <div className="navbar__menu__btn">{children}</div>
   </Link>
 );
@@ -70,17 +70,22 @@ const Navbar = () => {
           <Link to="/">
             <img
               className="navbar__menu__logo"
-              src="imgs/sparta-navbar-logo.png"
+              src="imgs/navbar-logo.png"
               alt="logo"
             />
           </Link>
           <NavbarBtn to="/catalog">전체 강의</NavbarBtn>
-          <NavbarBtn to="/">
+          <NavbarBtn
+            to="https://nbcamp.spartacodingclub.kr/"
+            openInNewTab="https://nbcamp.spartacodingclub.kr/"
+          >
             부트캠프 <div className="navbar__menu__btn__txt">국비</div>
           </NavbarBtn>
-          <NavbarBtn to="/">커뮤니티</NavbarBtn>
-          <NavbarBtn to="/">블로그</NavbarBtn>
-          <NavbarBtn to="/">이벤트</NavbarBtn>
+          <NavbarBtn to="https://spartacodingclub.kr/community/freeboard/all?text=&sort=latest&week=&pageChunkSize=10&curPage=1">
+            커뮤니티
+          </NavbarBtn>
+          <NavbarBtn to="https://spartacodingclub.kr/blog">블로그</NavbarBtn>
+          <NavbarBtn to="https://spartacodingclub.kr/event">이벤트</NavbarBtn>
         </div>
         <button className="navbar__menu__login__btn">로그인</button>
       </div>

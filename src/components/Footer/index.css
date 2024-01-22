@@ -3,9 +3,154 @@
 @tailwind utilities;
 
 .footer__section {
-  @apply bg-zinc-900 border-b border-gray-700;
+  @apply h-[39rem] bg-zinc-900 border-b border-gray-700;
 }
 
-.footer__section__menu {
-  @apply flex items-center justify-between;
+.footer__section__container {
+  @apply max-w-[75rem] mx-auto pt-8;
+}
+
+.footer__section__line {
+  @apply mt-6 mb-6 border-b border-gray-700;
+}
+
+.footer__menu {
+  @apply flex justify-between;
+}
+
+.footer__menu__customer {
+  @apply grid;
+}
+
+.footer__menu__title {
+  @apply text-[1rem] text-gray-200;
+}
+
+.footer__menu__contents__container {
+  @apply mt-4 mb-3;
+}
+
+.footer__menu__contents {
+  @apply text-[0.813rem] text-gray-400;
+}
+
+.footer__menu__br {
+  @apply h-3;
+}
+
+.footer__menu__customer__icon {
+  @apply flex items-center text-[0.875rem] text-gray-200;
+}
+
+.footer__menu__common__container {
+  @apply grid gap-4 mt-5;
+}
+
+.footer__menu__company__container {
+  @apply flex items-center;
+}
+
+.footer__menu__company__blank {
+  @apply w-4;
+}
+
+.footer__menu__company__contents {
+  @apply font-semibold text-gray-50 text-[0.625rem] bg-brand px-1 py-[0.063rem] rounded-sm;
+}
+
+.footer__etc__menu {
+  @apply flex justify-between;
+}
+
+.footer__etc__menu__left__container {
+  @apply flex h-10 mt-4;
+}
+
+.footer__etc__menu__title {
+  @apply mr-6 text-xs text-gray-100 font-bold;
+}
+
+.footer__etc__menu__contents {
+  @apply mr-6 text-xs text-gray-400;
+}
+
+.footer__etc__menu__right__container {
+  @apply flex gap-8;
+}
+
+.footer__etc__menu__right__icon__container {
+  @apply flex items-center w-[8.25rem];
+}
+
+.footer__etc__menu__icon {
+  @apply mr-6 text-gray-400 transition-all duration-150 ease-in;
+}
+
+.footer__etc__menu__icon:hover {
+  @apply scale-105 text-brand;
+}
+
+.footer__etc__menu__insta,
+.footer__etc__menu__youtube {
+  @apply text-xl;
+}
+
+.footer__etc__menu__naver {
+  @apply text-base;
+}
+
+.footer__etc__menu__right__brand__container {
+  @apply flex items-center gap-3;
+}
+
+.footer__etc__menu__brand {
+  @apply w-9 h-9;
+}
+
+.footer__etc__menu__brand__txt {
+  @apply text-[0.813rem] text-gray-400;
+}
+
+.footer__etc__contents__section {
+  @apply w-[43.75rem] h-[4.75rem];
+}
+
+.footer__etc__contents__title__txt {
+  @apply h-8 text-xs text-gray-400;
+}
+
+.footer__etc__contents__txt {
+  @apply flex flex-wrap h-11 text-xs text-gray-400;
+}
+
+.footer__etc__contents__txt__ceo {
+  @apply flex w-[5.3rem] h-5 gap-1;
+}
+
+.footer__etc__contents__txt__eid {
+  @apply flex w-[11.1rem] h-5 gap-1;
+}
+
+.footer__etc__contents__txt__bn {
+  @apply flex w-[15.3rem] h-5 gap-1;
+}
+
+.footer__etc__contents__txt__en {
+  @apply flex w-[11rem] h-5 gap-1;
+}
+
+.footer__etc__contents__txt__addr {
+  @apply flex w-[15.3rem] h-5 gap-1;
+}
+
+.footer__etc__contents__txt__email {
+  @apply flex w-[11.7rem] h-5 gap-1;
+}
+
+.footer__etc__contents__txt__tel {
+  @apply flex w-[7rem] h-5 gap-1;
+}
+
+.footer__etc__contents__c {
+  @apply flex h-11 pt-4 text-xs text-gray-400 font-semibold;
 }
