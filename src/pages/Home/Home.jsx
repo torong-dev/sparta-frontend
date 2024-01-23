@@ -1,40 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Carousel } from "react-bootstrap";
 import { fetchCourseData } from "../../api/api.js";
+import LectureItem from "../../components/LectureItem";
 import "../Home/index.css";
-
-// 강의 섹션의 각 아이템을 렌더링하는 컴포넌트
-const LectureItem = ({
-  couresId,
-  couresImgURL,
-  couresTitle,
-  couresDescription,
-  courseFree,
-}) => (
-  <div className="home__leactures__grid" id={couresId}>
-    <img
-      className="home__leactures__grid-img"
-      src={couresImgURL}
-      alt="bucketlist"
-    />
-    <div className="home__lectures__btn__details">
-      <button className="home__lectures__btn__details__btn">
-        <img src="imgs/Home/home-lectures-thunder.svg" alt="thunder" />
-        <span>&nbsp;바로 수강신청</span>
-      </button>
-      <div>
-        <h3 className="home__lectures__content__title">{couresTitle}</h3>
-        <p className="home__lectures__content__detail">{couresDescription}</p>
-      </div>
-      <p className="home__lectures__content__price">{courseFree}</p>
-    </div>
-  </div>
-);
 
 const Home = () => {
   const titlesRef = useRef(null);
   const [courseData, setCourseData] = useState([]);
 
+  //강의 데이터를 비동기적으로 가져오고 상태 업데이트
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -246,12 +220,14 @@ const Home = () => {
               </h2>
             </div>
             <div className="home__lectures__grids">
+              {/* Mock 데이터 */}
               <LectureItem
                 couresImgURL="imgs/Home/home-lectures-bucketlist.png"
                 couresTitle="2024 나만의 버킷리스트 만들기"
                 couresDescription="올해는 어떤 목표를 이뤄볼까? 버킷리스트로 코딩에 입문해봐요"
                 courseFree="무료"
               />
+              {/* API에서 가져온 강의 데이터를 매핑하여 동적으로 렌더링 */}
               {courseData.map((course) => (
                 <LectureItem
                   key={course.couresId}
