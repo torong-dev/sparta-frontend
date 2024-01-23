@@ -1,15 +1,15 @@
 import React from "react";
 import { RiCustomerService2Line } from "react-icons/ri";
-import { FaInstagram } from "react-icons/fa";
+import { FaInstagram, FaYoutube } from "react-icons/fa";
 import { SiNaver } from "react-icons/si";
-import { FaYoutube } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "../Footer/index.css";
 
 export default function Footer() {
   return (
     <footer className="footer__section">
-      <footer className="footer__section__container">
+      <div className="footer__section__container">
+        {/* 고객 센터 */}
         <div className="footer__menu">
           <div className="footer__menu__customer">
             <div className="footer__menu__title">고객센터</div>
@@ -48,6 +48,7 @@ export default function Footer() {
               </a>
             </div>
           </div>
+          {/* 서비스 */}
           <div className="footer__menu__service">
             <div className="footer__menu__title">서비스</div>
             <div className="footer__menu__common__container">
@@ -88,6 +89,7 @@ export default function Footer() {
               </a>
             </div>
           </div>
+          {/* 패밀리 사이트 */}
           <div className="footer__menu__family">
             <div className="footer__menu__title">패밀리 사이트</div>
             <div className="footer__menu__common__container">
@@ -125,6 +127,7 @@ export default function Footer() {
               </a>
             </div>
           </div>
+          {/* 기업 서비스 */}
           <div className="footer__menu__corp">
             <div className="footer__menu__title">기업 서비스</div>
             <div className="footer__menu__common__container">
@@ -154,6 +157,7 @@ export default function Footer() {
               </a>
             </div>
           </div>
+          {/* 회사 */}
           <div className="footer__menu__company">
             <div className="footer__menu__title">회사</div>
             <div className="footer__menu__common__container">
@@ -205,8 +209,10 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer__section__line"></div>
+        {/* 기타 */}
         <section className="footer__etc">
           <ul className="footer__etc__menu">
+            {/* 왼쪽 컨테이너 */}
             <div className="footer__etc__menu__left__container">
               <li className="footer__etc__menu__title">
                 <a
@@ -236,6 +242,7 @@ export default function Footer() {
                 </a>
               </li>
             </div>
+            {/* 오른쪽 컨테이너 */}
             <div className="footer__etc__menu__right__container">
               <div className="footer__etc__menu__right__icon__container">
                 <a
@@ -270,6 +277,7 @@ export default function Footer() {
               </div>
             </div>
           </ul>
+          {/* 추가적인 콘텐츠 */}
           <div className="footer__etc__contents">
             <section className="footer__etc__contents__section">
               <h4 className="footer__etc__contents__title__txt">
@@ -322,7 +330,7 @@ export default function Footer() {
             </p>
           </div>
         </section>
-      </footer>
+      </div>
     </footer>
   );
 }
