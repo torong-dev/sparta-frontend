@@ -1,9 +1,51 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Carousel } from "react-bootstrap";
+import { fetchCourseData } from "../../api/api.js";
 import "../Home/index.css";
+
+// 강의 섹션의 각 아이템을 렌더링하는 컴포넌트
+const LectureItem = ({
+  couresId,
+  couresImgURL,
+  couresTitle,
+  couresDescription,
+  courseFree,
+}) => (
+  <div className="home__leactures__grid" id={couresId}>
+    <img
+      className="home__leactures__grid-img"
+      src={couresImgURL}
+      alt="bucketlist"
+    />
+    <div className="home__lectures__btn__details">
+      <button className="home__lectures__btn__details__btn">
+        <img src="imgs/Home/home-lectures-thunder.svg" alt="thunder" />
+        <span>&nbsp;바로 수강신청</span>
+      </button>
+      <div>
+        <h3 className="home__lectures__content__title">{couresTitle}</h3>
+        <p className="home__lectures__content__detail">{couresDescription}</p>
+      </div>
+      <p className="home__lectures__content__price">{courseFree}</p>
+    </div>
+  </div>
+);
 
 const Home = () => {
   const titlesRef = useRef(null);
+  const [courseData, setCourseData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await fetchCourseData();
+        setCourseData(data);
+      } catch (errer) {}
+    };
+
+    // 컴포넌트가 마운트 될 때, fetchData 함수를 호출
+    fetchData();
+  }, []);
 
   // 메인 타이틀 애니메이션 효과
   useEffect(() => {
@@ -204,136 +246,23 @@ const Home = () => {
               </h2>
             </div>
             <div className="home__lectures__grids">
-              <div className="home__leactures__grid">
-                <img
-                  className="home__leactures__grid-img"
-                  src="imgs/Home/home-lectures-bucketlist.png"
-                  alt="bucketlist"
+              <LectureItem
+                couresImgURL="imgs/Home/home-lectures-bucketlist.png"
+                couresTitle="2024 나만의 버킷리스트 만들기"
+                couresDescription="올해는 어떤 목표를 이뤄볼까? 버킷리스트로 코딩에 입문해봐요"
+                courseFree="무료"
+              />
+              {courseData.map((course) => (
+                <LectureItem
+                  key={course.couresId}
+                  couresId={course.couresId}
+                  couresImgURL={course.couresImgURL}
+                  couresTitle={course.couresTitle}
+                  couresDescription={course.couresDescription}
+                  couresPrice={course.couresPrice}
+                  courseFree={course.courseFree}
                 />
-                <div className="home__lectures__btn__details">
-                  <button className="home__lectures__btn__details__btn">
-                    <img
-                      src="imgs/Home/home-lectures-thunder.svg"
-                      alt="thunder"
-                    />
-                    <span>&nbsp;바로 수강신청</span>
-                  </button>
-                  <div>
-                    <h3 className="home__lectures__content__title">
-                      2024 나만의 버킷리스트 만들기
-                    </h3>
-                    <p className="home__lectures__content__detail">
-                      올해는 어떤 목표를 이뤄볼까? 버킷리스트로 코딩에
-                      입문해봐요
-                    </p>
-                  </div>
-                  <p className="home__lectures__content__price">무료</p>
-                </div>
-              </div>
-              <div className="home__leactures__grid">
-                <img
-                  className="home__leactures__grid-img"
-                  src="imgs/Home/home-lectures-bucketlist.png"
-                  alt="bucketlist"
-                />
-                <div className="home__lectures__btn__details">
-                  <button className="home__lectures__btn__details__btn">
-                    <img
-                      src="imgs/Home/home-lectures-thunder.svg"
-                      alt="thunder"
-                    />
-                    <span>&nbsp;바로 수강신청</span>
-                  </button>
-                  <div>
-                    <h3 className="home__lectures__content__title">
-                      2024 나만의 버킷리스트 만들기
-                    </h3>
-                    <p className="home__lectures__content__detail">
-                      올해는 어떤 목표를 이뤄볼까? 버킷리스트로 코딩에
-                      입문해봐요
-                    </p>
-                  </div>
-                  <p className="home__lectures__content__price">무료</p>
-                </div>
-              </div>
-              <div className="home__leactures__grid">
-                <img
-                  className="home__leactures__grid-img"
-                  src="imgs/Home/home-lectures-bucketlist.png"
-                  alt="bucketlist"
-                />
-                <div className="home__lectures__btn__details">
-                  <button className="home__lectures__btn__details__btn">
-                    <img
-                      src="imgs/Home/home-lectures-thunder.svg"
-                      alt="thunder"
-                    />
-                    <span>&nbsp;바로 수강신청</span>
-                  </button>
-                  <div>
-                    <h3 className="home__lectures__content__title">
-                      2024 나만의 버킷리스트 만들기
-                    </h3>
-                    <p className="home__lectures__content__detail">
-                      올해는 어떤 목표를 이뤄볼까? 버킷리스트로 코딩에
-                      입문해봐요
-                    </p>
-                  </div>
-                  <p className="home__lectures__content__price">무료</p>
-                </div>
-              </div>
-              <div className="home__leactures__grid">
-                <img
-                  className="home__leactures__grid-img"
-                  src="imgs/Home/home-lectures-bucketlist.png"
-                  alt="bucketlist"
-                />
-                <div className="home__lectures__btn__details">
-                  <button className="home__lectures__btn__details__btn">
-                    <img
-                      src="imgs/Home/home-lectures-thunder.svg"
-                      alt="thunder"
-                    />
-                    <span>&nbsp;바로 수강신청</span>
-                  </button>
-                  <div>
-                    <h3 className="home__lectures__content__title">
-                      2024 나만의 버킷리스트 만들기
-                    </h3>
-                    <p className="home__lectures__content__detail">
-                      올해는 어떤 목표를 이뤄볼까? 버킷리스트로 코딩에
-                      입문해봐요
-                    </p>
-                  </div>
-                  <p className="home__lectures__content__price">무료</p>
-                </div>
-              </div>
-              <div className="home__leactures__grid">
-                <img
-                  className="home__leactures__grid-img"
-                  src="imgs/Home/home-lectures-bucketlist.png"
-                  alt="bucketlist"
-                />
-                <div className="home__lectures__btn__details">
-                  <button className="home__lectures__btn__details__btn">
-                    <img
-                      src="imgs/Home/home-lectures-thunder.svg"
-                      alt="thunder"
-                    />
-                    <span>&nbsp;바로 수강신청</span>
-                  </button>
-                  <div>
-                    <h3 className="home__lectures__content__title">
-                      2024 나만의 버킷리스트 만들기
-                    </h3>
-                    <p className="home__lectures__content__detail">
-                      올해는 어떤 목표를 이뤄볼까? 버킷리스트로 코딩에
-                      입문해봐요
-                    </p>
-                  </div>
-                  <p className="home__lectures__content__price">무료</p>
-                </div>
-              </div>
+              ))}
             </div>
           </section>
         </div>

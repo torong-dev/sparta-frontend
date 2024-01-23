@@ -39,7 +39,9 @@ const Navbar = () => {
           <div className="navbar__services_corp">
             <button
               onClick={toggleDropdown}
-              className={`navbar__services__corp__btn ${isOpen ? "up" : "down"}`}
+              className={`navbar__services__corp__btn ${
+                isOpen ? "up" : "down"
+              }`}
             >
               기업 서비스&nbsp;{isOpen ? <FaAngleUp /> : <FaAngleDown />}
             </button>

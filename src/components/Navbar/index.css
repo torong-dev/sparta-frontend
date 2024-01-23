@@ -14,6 +14,10 @@
   @apply max-w-[75rem] h-[2.625rem] mx-auto flex justify-between items-center text-sm text-gray-400;
 }
 
+.navbar__services a {
+  @apply decoration-0;
+}
+
 .navbar__services__hire__btn {
   @apply flex mx-4;
 }
@@ -71,7 +75,7 @@
 }
 
 .navbar__menu__btn:hover {
-  @apply bg-rose-700;
+  @apply bg-rose-700 no-underline decoration-transparent;
 }
 
 .navbar__menu__btn:hover .navbar__menu__btn__txt {
