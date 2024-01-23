@@ -1,3 +1,103 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.catalog {
+  @apply relative h-fit w-full my-24;
+}
+
+.catalog__section {
+  @apply flex pr-16 max-w-7xl mx-auto flex-col items-start;
+}
+
+.catalog__menu {
+  @apply flex justify-start items-center w-full;
+}
+
+.catalog__menu__items {
+  @apply flex items-center w-screen border-solid border-b border-b-slate-500;
+}
+
+.catalog__menu__btn {
+  @apply m-6 cursor-pointer text-neutral-600 hover:text-rose-700 text-base;
+}
+
+.catalog__menu__search__btn {
+  @apply flex  justify-center items-center border border-rose-700 rounded-full text-white text-sm px-4 py-2.5 ml-72;
+}
+
+.catalog__main {
+  @apply flex flex-col items-start gap-14 self-stretch pr-6 pb-6 mt-20;
+}
+
+.catalog__main__sort {
+  @apply flex flex-row space-x-4 items-center self-stretch;
+}
+
+.catalog__sort__style {
+  @apply flex items-center gap-4 -mb-4;
+}
+
+.catalog__sort__items {
+  @apply flex items-center gap-4;
+}
+
+.catalog__sort__btn {
+  @apply flex items-center cursor-pointer text-sm;
+}
+
+.catalog__main__banner {
+  @apply flex gap-6 justify-center items-center self-stretch relative cursor-pointer bg-gradient-to-r from-zinc-950 from-0% to-emerald-600 to-100%  h-36 rounded-xl;
+}
+
+.catalog__banner__content {
+  @apply flex flex-col gap-3;
+}
+
+.banner__content__style1 {
+  @apply not-italic text-xl leading-6 font-normal;
+}
+
+.catalog__banner__innerContent {
+  @apply flex justify-center items-center;
+}
+
+.banner__content__style2 {
+  @apply not-italic text-sm font-semibold;
+}
+
+.catalog__banner__img {
+  @apply flex absolute items-center left-3/4 w-56 h-36;
+}
+
+.banner__img__style {
+  @apply box-border block overflow-hidden;
+}
+
+.catalog__main__lecture {
+  @apply flex flex-col items-center self-stretch;
+}
+
+.main__lecture__style {
+  @apply grid grid-cols-3 gap-y-10 gap-x-6 m-auto;
+}
+
+.main__lecture__items {
+  @apply flex flex-col min-w-lectureImg gap-4 cursor-pointer relative;
+}
+
+.lecture__items__image {
+  @apply relative w-full aspect-image rounded-xl overflow-hidden;
+}
+
+.lecture__items__body {
+  @apply flex flex-col items-start gap-3 self-stretch;
+}
+
+.lecture__items__content {
+  @apply flex flex-col items-start gap-1 w-full;
+}
+
+.lecture__items__footer {
+  @apply flex flex-col justify-center items-start self-stretch;
+}

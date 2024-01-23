@@ -1,0 +1,74 @@
+[
+  {
+    "courseId": 1,
+    "courseTitle": "2024 나만의 버킷리스트 만들기",
+    "courseDescription": "IT가 막막하게 느껴지는 당신을 위한 IT 커뮤니케이션의 모든 것",
+    "coursePrice": "무료",
+    "courseImgURL": "https://static.spartacodingclub.kr/TeamSparta-Inc/scc-frontend/assets/images/catalog/cards/v2/bucketlist_2024.png",
+    "courseSupport": false,
+    "courseTag": "국비지원"
+  },
+  {
+    "courseId": 2,
+    "courseTitle": "창업 노하우",
+    "courseDescription": "시작하는 창업가를 위한 스타트업 초기 창업의 A to Z",
+    "coursePrice": "150,000",
+    "courseImgURL": "https://static.spartacodingclub.kr/TeamSparta-Inc/scc-frontend/assets/images/catalog/cards/v2/ chang.png",
+    "courseSupport": false,
+    "courseTag": "새해에는"
+  },
+  {
+    "courseId": 3,
+    "courseTitle": "[격파르타] ADSP 자격증 챌린지",
+    "courseDescription": "100% 환급형 자격증 취득 챌린지 격파르타 1달 만에 합격하는 ADsP",
+    "coursePrice": "200,000",
+    "courseImgURL": "https://static.spartacodingclub.kr/TeamSparta-Inc/scc-frontend/assets/images/catalog/cards/v2/certificate_adsp.png",
+    "courseSupport": false,
+    "courseTag": "AI"
+  },
+  {
+    "courseId": 4,
+    "courseTitle": "[격파르타] SQLD 자격증 챌린지",
+    "courseDescription": "100% 환급형 자격증 취득 챌린지 격파르타 80%합격을 자랑하는 SQL",
+    "coursePrice": "200,000",
+    "courseImgURL": "https://static.spartacodingclub.kr/TeamSparta-Inc/scc-frontend/assets/images/catalog/cards/v2/certificate_sqld.png",
+    "courseSupport": false,
+    "courseTag": "앱∙게임 개발"
+  },
+  {
+    "courseId": 5,
+    "courseTitle": "주니어 PM을 위한 성장 바이블",
+    "courseDescription": "일 하는 방법부터 커리어 방향성까지, PM들을 위한 성장 지침서.",
+    "coursePrice": "무료",
+    "courseImgURL": "https://static.spartacodingclub.kr/TeamSparta-Inc/scc-frontend/assets/images/catalog/cards/v2/pm_bible.png",
+    "courseSupport": false,
+    "courseTag": "데이터"
+  },
+  {
+    "courseId": 6,
+    "courseTitle": "문과생을 위한 IT 용어 해설",
+    "courseDescription": "IT가 막막하게 느껴지는 당신을 위한 IT 커뮤니케이션의 모든 것",
+    "coursePrice": "무료",
+    "courseImgURL": "https://static.spartacodingclub.kr/TeamSparta-Inc/scc-frontend/assets/images/catalog/cards/v2/IT_101.png",
+    "courseSupport": false,
+    "courseTag": "업무 자동화"
+  },
+  {
+    "courseId": 7,
+    "courseTitle": "1시간만에 크리스마스 디데이 캘린더 만들기",
+    "courseDescription": "크리스마스 특집! 1시간만에 디데이 캘린더 만들어보며 코딩 배워요",
+    "coursePrice": "무료",
+    "courseImgURL": "https://static.spartacodingclub.kr/TeamSparta-Inc/scc-frontend/assets/images/catalog/cards/v2/advent-calendar.png",
+    "courseSupport": false,
+    "courseTag": "노코드"
+  },
+  {
+    "courseId": 8,
+    "courseTitle": "ChatGPT 300% 활용하기",
+    "courseDescription": "업무 자동화, 주식 데이터 분석 등 다양한 예제와 실습으로ChatGPT를 익히고, 실무에 바로 활용하는 법을 배웁니다.",
+    "coursePrice": "410,000",
+    "courseImgURL": "https://static.spartacodingclub.kr/TeamSparta-Inc/scc-frontend/assets/images/catalog/cards/v2/gpt_300_online.png",
+    "courseSupport": true,
+    "courseTag": "노코드"
+  }
+]
