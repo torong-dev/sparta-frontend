@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .login {
-  @apply z-50 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full flex justify-center items-center bg-gray-50 bg-opacity-40;
+  @apply z-40 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full flex justify-center items-center bg-gray-50 bg-opacity-40;
 }
 
 .login__modal {

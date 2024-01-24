@@ -1,13 +1,21 @@
 import React, { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { FaArrowLeft } from "react-icons/fa6";
+import Signup from "../../pages/Signup/Signup";
+import { loginUser } from "../../api/api";
 import "../Login/index.css";
 
 const Login = ({ onClose }) => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [pw, setPw] = useState("");
   const [showEmailHelp, setShowEmailHelp] = useState(false);
   const [showPasswordHelp, setShowPasswordHelp] = useState(false);
+  const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
+
+  // 회원가입 모달 함수
+  const signupModal = () => {
+    setIsSignupModalOpen(!isSignupModalOpen);
+  };
 
   /*
     정규 표현식을 사용하여 이메일 형식을 검증하는 함수
@@ -23,9 +31,9 @@ const Login = ({ onClose }) => {
   };
 
   // 비밀번호는 6자 이상, 숫자와 영문자 조합
-  const isValidPasswordFormat = (password) => {
+  const isValidPasswordFormat = (pw) => {
     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
-    return passwordRegex.test(password);
+    return passwordRegex.test(pw);
   };
 
   // 이메일이 비어있을 때 help 보여주기
@@ -38,27 +46,34 @@ const Login = ({ onClose }) => {
 
   // 비밀번호가 비어있을 때 help 보여주기
   const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
+    setPw(e.target.value);
     setShowPasswordHelp(
       e.target.value.trim() === "" || !isValidPasswordFormat(e.target.value)
     );
   };
 
   // 빈 칸인 상태에서 로그인을 했을 떄 help 보여주기
-  const handleLoginClick = () => {
+  const handleLoginClick = async () => {
     if (email.trim() === "") {
       setShowEmailHelp(true);
     } else {
       setShowEmailHelp(false);
     }
 
-    if (password.trim() === "") {
+    if (pw.trim() === "") {
       setShowPasswordHelp(true);
     } else {
       setShowPasswordHelp(false);
     }
 
-    console.log("로그인 되었습니다.", email);
+    try {
+      // 로그인 API 호출
+      const user = await loginUser({ email, pw });
+      // 로그인 성공 시 추가 작업 수행
+      console.log("로그인 성공:", user);
+    } catch (error) {
+      console.error("로그인 오류:", error);
+    }
   };
 
   const handleBackClick = () => {
@@ -111,13 +126,13 @@ const Login = ({ onClose }) => {
               className="login__modal__input"
               placeholder="비밀번호 입력"
               type="password"
-              value={password}
+              value={pw}
               onChange={handlePasswordChange}
               onKeyDown={handleKeyDown}
             />
             {showPasswordHelp && (
               <div className="login__modal__input__help">
-                {password.trim() === ""
+                {pw.trim() === ""
                   ? "비밀번호를 입력해 주세요."
                   : "가입되지 않은 이메일이거나 비밀번호가 일치하지 않습니다."}
               </div>
@@ -128,7 +143,15 @@ const Login = ({ onClose }) => {
           </div>
           <div className="login__modal__footer">
             <div className="login__modal__footer__contents">
-              <button className="login__modal__footer__help">회원가입</button>
+              <button
+                onClick={signupModal}
+                className="login__modal__footer__help"
+              >
+                회원가입
+              </button>
+              {isSignupModalOpen && (
+                <Signup onClose={() => setIsSignupModalOpen(false)} />
+              )}
               <div className="login__modal__footer__line"></div>
               <span className="login__modal__footer__help">이메일 찾기</span>
               <div className="login__modal__footer__line"></div>

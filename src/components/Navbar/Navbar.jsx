@@ -14,11 +14,11 @@ const NavbarBtn = ({ to, children, openInNewTab }) => (
 // Navbar 컴포넌트 정의
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
 
   // 로그인 모달 함수
   const loginModal = () => {
-    setIsModalOpen(!isModalOpen);
+    setIsLoginModalOpen(!isLoginModalOpen);
   };
 
   // 드롭다운 토글 함수
@@ -99,8 +99,9 @@ const Navbar = () => {
         <button onClick={loginModal} className="navbar__menu__login__btn">
           로그인
         </button>
-        {/* 모달 */}
-        {isModalOpen && <Login onClose={loginModal} />}
+        {isLoginModalOpen && (
+          <Login onClose={() => setIsLoginModalOpen(false)} />
+        )}
       </div>
     </div>
   );

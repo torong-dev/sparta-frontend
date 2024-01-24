@@ -1,3 +1,141 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.signup {
+  @apply z-50 fixed overflow-auto top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full flex justify-center items-center bg-zinc-800;
+}
+
+.signup__modal {
+  @apply relative w-[25.5rem] h-auto px-6 pb-14 bg-zinc-900 rounded-xl mt-[35rem] mb-32;
+}
+
+.signup__modal__header {
+  @apply flex justify-between mt-6;
+}
+
+.signup__modal__back {
+  @apply flex items-center gap-2 text-base font-semibold text-gray-50;
+}
+
+.signup__modal__back:hover {
+  @apply cursor-pointer;
+}
+
+.signup__modal__close {
+  @apply text-2xl text-gray-50;
+}
+
+.signup__modal__close:hover {
+  @apply cursor-pointer;
+}
+
+.signup__modal__body {
+  @apply w-[22.5rem] overflow-visible m-auto flex flex-col justify-between flex-grow;
+}
+
+.signup__modal__body__contents {
+  @apply flex flex-col justify-center items-center w-full pt-[3.75rem];
+}
+
+.signup__modal__body__title {
+  @apply text-xl text-gray-50 font-semibold;
+}
+
+.signup__modal__body__line {
+  @apply h-3;
+}
+
+.signup__modal__body__detail {
+  @apply text-base text-gray-500;
+}
+
+.signup__modal__body__line2 {
+  @apply h-5;
+}
+
+.signup__modal__body__logos {
+  @apply w-[15.5rem] h-[4.3rem];
+}
+
+.signup__modal__body__line3 {
+  @apply h-[3.75rem];
+}
+
+/* 이메일 */
+.signup__modal__body__input__box {
+  @apply relative w-full flex flex-col justify-center items-start p-5 gap-2 bg-gray-50 rounded-xl;
+}
+
+.signup__modal__body__input__title {
+  @apply text-xs text-gray-700;
+}
+
+.signup__modal__body__input {
+  @apply flex flex-row items-center border-none outline-none text-zinc-950 text-sm font-semibold w-60 h-5 bg-gray-50;
+}
+
+.signup__modal__body__input__btn {
+  @apply absolute right-5 bg-gray-400 text-gray-50 appearance-none flex m-auto justify-center items-center py-4 gap-[0.625rem] w-20 h-9 font-semibold text-[0.813rem] rounded-[2.125rem];
+}
+
+.signup__modal__body__input__box__help {
+  @apply w-full items-start text-[0.813rem] text-rose-400;
+}
+
+.signup__modal__body__input__box__help__line {
+  @apply h-2;
+}
+
+.signup__modal__body__line4 {
+  @apply h-5;
+}
+
+/* 비밀번호 */
+
+/* 이름 */
+
+/* 휴대폰 번호 */
+
+/* 생년월일 */
+
+.signup__modal__body__line5 {
+  @apply h-8;
+}
+
+/* 성별 */
+.signup__modal__body__gender {
+  @apply w-full;
+}
+
+.signup__modal__body__gender__title {
+  @apply flex items-start text-gray-50 font-semibold text-sm;
+}
+
+.signup__modal__body__gentder__btns {
+  @apply flex gap-2;
+}
+
+.signup__modal__body__man__btn,
+.signup__modal__body__woman__btn,
+.signup__modal__body__nothing__btn {
+  @apply flex font-medium text-gray-50 justify-center items-center px-5 h-[2.625rem] gap-[0.625rem] border border-gray-600 rounded-[6.25rem];
+}
+
+.signup__modal__body__man__btn:focus,
+.signup__modal__body__woman__btn:focus,
+.signup__modal__body__nothing__btn:focus {
+  @apply bg-gray-50 font-medium text-gray-900;
+}
+
+.signup__modal__body__line6 {
+  @apply w-full h-px bg-gray-600;
+}
+
+.signup__modal__body__line7 {
+  @apply h-10;
+}
+
+.signup__modal__btn {
+  @apply w-full h-14 border-none cursor-default bg-rose-300 bg-opacity-30 font-semibold text-base text-gray-50 text-opacity-40 rounded-[3.75rem];
+}
