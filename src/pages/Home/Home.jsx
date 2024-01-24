@@ -222,23 +222,23 @@ const Home = () => {
             <div className="home__lectures__grids">
               {/* Mock 데이터 */}
               <LectureItem
-                couresImgURL="imgs/Home/home-lectures-bucketlist.png"
-                couresTitle="2024 나만의 버킷리스트 만들기"
-                couresDescription="올해는 어떤 목표를 이뤄볼까? 버킷리스트로 코딩에 입문해봐요"
+                courseImgURL="imgs/Home/home-lectures-bucketlist.png"
+                courseTitle="2024 나만의 버킷리스트 만들기"
+                courseDescription="올해는 어떤 목표를 이뤄볼까? 버킷리스트로 코딩에 입문해봐요"
                 courseFree="무료"
               />
               {/* API에서 가져온 강의 데이터를 매핑하여 동적으로 렌더링 */}
-              {courseData.map((course) => (
-                <LectureItem
-                  key={course.couresId}
-                  couresId={course.couresId}
-                  couresImgURL={course.couresImgURL}
-                  couresTitle={course.couresTitle}
-                  couresDescription={course.couresDescription}
-                  couresPrice={course.couresPrice}
-                  courseFree={course.courseFree}
-                />
-              ))}
+              {courseData &&
+                courseData.map((course) => (
+                  <LectureItem
+                    key={course.courseId}
+                    courseId={course.courseId}
+                    courseImgURL={course.courseImgURL}
+                    courseTitle={course.courseTitle}
+                    courseDescription={course.courseDescription}
+                    courseFree={course.courseFree}
+                  />
+                ))}
             </div>
           </section>
         </div>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
+import Login from "../../pages/Login/Login.jsx";
 import "../Navbar/index.css";
 
 // 메뉴 버튼에 대한 컴포넌트
@@ -13,6 +14,12 @@ const NavbarBtn = ({ to, children, openInNewTab }) => (
 // Navbar 컴포넌트 정의
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // 로그인 모달 함수
+  const loginModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
 
   // 드롭다운 토글 함수
   const toggleDropdown = () => {
@@ -89,7 +96,11 @@ const Navbar = () => {
           <NavbarBtn to="https://spartacodingclub.kr/blog">블로그</NavbarBtn>
           <NavbarBtn to="https://spartacodingclub.kr/event">이벤트</NavbarBtn>
         </div>
-        <button className="navbar__menu__login__btn">로그인</button>
+        <button onClick={loginModal} className="navbar__menu__login__btn">
+          로그인
+        </button>
+        {/* 모달 */}
+        {isModalOpen && <Login onClose={loginModal} />}
       </div>
     </div>
   );

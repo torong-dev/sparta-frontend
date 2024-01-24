@@ -38,3 +38,9 @@ code {
 a:hover {
   @apply no-underline text-inherit;
 }
+
+button,
+button:focus,
+button:active {
+  outline: none;
+}

@@ -9,7 +9,5 @@ export const fetchCourseData = async () => {
   try {
     const response = await instance.get("/api");
     return response.data;
-  } catch (error) {
-    throw error;
-  }
+  } catch (error) {}
 };
