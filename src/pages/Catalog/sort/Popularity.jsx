@@ -1,26 +1,30 @@
 import React, { useEffect, useState } from "react";
-import "../Catalog/index.css";
-import api from "../../api/api";
-import Lecture from "./Lecture";
+import "../index.css";
+import Lecture from "../Lecture";
+import api from "../../../api/api";
 import { useNavigate } from "react-router-dom";
 import { GoSearch } from "react-icons/go";
 import { MdArrowForwardIos } from "react-icons/md";
 import { LuDot } from "react-icons/lu";
 
-export default function Catalog() {
-  // 서버로 부터 받아온 data state
+export default function Popularity() {
+  const navigate = useNavigate();
+  // 서버로 부터 받아온 데이터 state
   const [data, setData] = useState([]);
+  // 서버로 부터 받아온 데이터
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await api.get("/api/catalog");
-        // console.log("response 확인 =>", response.data);
+        const response = await api.get("/api/catalog", {
+          params: { sort: "popularity" },
+        });
+        // console.log("response 확인 => ", response.data);
         setData(response.data);
       } catch (error) {
         if (error.response) {
-          console.log("error response 확인 =>", error);
+          // console.log("error response 확인 => ", error.response);
           const errorStatus = error.response.status;
-          const errorMessage = error.response.data.errorMessage;
+          const errorMessage = error.response.errorMessage;
           if (errorStatus === 404 || errorStatus === 500) {
             alert(errorMessage);
             navigate("/error");
@@ -30,8 +34,6 @@ export default function Catalog() {
     };
     fetchData();
   }, []);
-  // const lectures = data;
-  const navigate = useNavigate();
   return (
     <div>
       <div className="catalog">
@@ -74,27 +76,23 @@ export default function Catalog() {
               <div className="catalog__sort__style">
                 <div className="catalog__sort__items">
                   <button onClick={() => navigate("/catalog/latest")}>
-                    <div className="catalog__sort__btnSelected">
-                      <LuDot className=" text-rose-700" />
-                      <p>최신순</p>
+                    <div className="catalog__sort__btn">
+                      <LuDot /> 최신순
                     </div>
                   </button>
                   <button onClick={() => navigate("/catalog/popularity")}>
-                    <div className="catalog__sort__btn">
-                      <LuDot />
-                      <p>인기순</p>
+                    <div className="catalog__sort__btnSelected">
+                      <LuDot className="text-rose-700" /> 인기순
                     </div>
                   </button>
                   <button onClick={() => navigate("/catalog/freecourse")}>
                     <div className="catalog__sort__btn">
-                      <LuDot />
-                      <p>무료</p>
+                      <LuDot /> 무료
                     </div>
                   </button>
                   <button onClick={() => navigate("/catalog/sortsupport")}>
                     <div className="catalog__sort__btn">
-                      <LuDot />
-                      <p>국비지원</p>
+                      <LuDot /> 국비지원
                     </div>
                   </button>
                 </div>

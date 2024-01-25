@@ -43,7 +43,11 @@
 }
 
 .catalog__sort__btn {
-  @apply flex items-center cursor-pointer text-sm;
+  @apply flex items-center cursor-pointer text-sm text-zinc-500;
+}
+
+.catalog__sort__btnSelected {
+  @apply flex items-center cursor-pointer text-sm text-orange-600;
 }
 
 .catalog__main__banner {
@@ -75,11 +79,11 @@
 }
 
 .catalog__main__lecture {
-  @apply flex flex-col items-center self-stretch;
+  @apply flex flex-col items-center self-stretch gap-6;
 }
 
 .main__lecture__style {
-  @apply grid grid-cols-3 gap-y-10 gap-x-6 m-auto;
+  @apply grid grid-cols-4 gap-y-10 gap-x-6 m-auto;
 }
 
 .main__lecture__items {
@@ -99,5 +103,141 @@
 }
 
 .lecture__items__footer {
+  @apply flex flex-col justify-center items-start self-stretch;
+}
+
+.catalog__main__recommend {
+  @apply flex flex-col items-start w-recommendWidth p-6 gap-4 h-max rounded-xl border border-solid border-slate-200 m-auto bg-white shadow-recommendShadow;
+}
+
+.main__recommend__head {
+  @apply flex items-center gap-3 self-stretch;
+}
+
+.recommend__head__img {
+  @apply w-14 h-14 flex-shrink-0 border border-solid border-gray-200 rounded-recommendImg;
+}
+
+.recommend__head__content {
+  @apply flex flex-col items-start;
+}
+
+.main__recommend__body {
+  @apply flex flex-col items-start gap-5 self-stretch;
+}
+
+.recommend__body__content {
+  @apply flex flex-col items-end gap-2 self-stretch break-keep overflow-hidden max-h-screen text-ellipsis;
+}
+
+.main__recommend__footer {
+  @apply flex px-0.5 justify-end items-start gap-3 self-stretch;
+}
+
+.recommend__footer__toggle {
+  @apply text-right cursor-pointer not-italic font-medium text-sm text-slate-400;
+}
+
+.recommend__body__content2 {
+  @apply flex flex-col items-end gap-2 self-stretch;
+}
+
+.body__content2__item {
+  @apply flex items-center gap-3 self-stretch;
+}
+
+.content2__item__style {
+  @apply flex text-xs pt-1 pb-1.5 pl-1.5 pr-1 font-medium rounded-md border border-solid border-x-pink-300 bg-pink-200 text-rose-700;
+}
+
+.main__lecture__title {
+  @apply flex justify-between items-center self-stretch;
+}
+
+.search {
+  @apply relative h-fit w-full;
+}
+
+.search__section {
+  @apply flex pr-16 max-w-7xl mx-auto flex-col items-start;
+}
+
+.search__main {
+  @apply flex flex-col items-start gap-14 self-stretch pr-6 pb-6 mt-20;
+}
+
+.search__main__lecture {
+  @apply flex flex-col items-center self-stretch gap-6;
+}
+
+.search__main__inputSection {
+  @apply flex py-20 px-32 flex-col justify-center items-center gap-3 ml-40 -mt-12;
+}
+
+.search__main__inputSectionStyle {
+  @apply w-searchWidth flex flex-col items-start gap-8;
+}
+
+.search__main__Style {
+  @apply w-searchWidth flex flex-col items-start gap-8;
+}
+
+.search__main__inputStyle {
+  @apply flex py-3 px-0 items-center w-searchWidth bg-zinc-800 font-normal text-xl text-white border-solid border-b-2 border-b-orange-600;
+}
+
+.search__main__closeBtn {
+  @apply flex items-center gap-2 absolute right-8 top-8 font-medium text-base rounded-lg bg-zinc-800 text-rose-700;
+}
+
+.search__main__popularity {
+  @apply flex justify-center flex-row items-center gap-5;
+}
+
+.search__main__popularityItems {
+  @apply flex items-center gap-3;
+}
+
+.search__main__popularityBtn {
+  @apply flex py-2 px-4 justify-center items-start gap-3 rounded-popularity not-italic font-normal text-sm bg-zinc-600 cursor-pointer text-rose-700 hover:bg-slate-600;
+}
+
+.search__main__popularityLecture {
+  @apply flex flex-col items-center w-full max-w-popularityWidth my-0 mx-auto;
+}
+
+.search__main__popularityLectureStyle {
+  @apply w-full py-0 px-6 flex flex-col self-stretch;
+}
+
+.search__main__mostPlayedLecture {
+  @apply flex flex-col  items-start self-stretch;
+}
+
+.main__mostPlayedLecture__title {
+  @apply flex justify-between items-center self-stretch;
+}
+
+.search__main__mostPlayedLectureBody {
+  @apply flex gap-y-10 gap-x-6 max-w-popularityLectureWidth my-0 mx-auto mb-32;
+}
+
+.SearchLecture__items {
+  @apply gap-5 max-w-72 flex flex-col min-w-72 cursor-pointer relative;
+}
+
+.SearchLecture__items__Img {
+  @apply relative w-full aspect-image overflow-hidden rounded-xl;
+}
+
+.SearchLecture__items__body {
+  @apply flex flex-col items-start gap-3 self-stretch;
+}
+
+.SearchLecture__items__contents {
+  @apply flex flex-col items-start gap-2 w-full;
+}
+
+.SearchLecture__items__price {
   @apply flex flex-col justify-center items-start self-stretch;
 }
