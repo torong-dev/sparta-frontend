@@ -37,12 +37,20 @@ code {
 
 input,
 input:focus,
-input:active a:hover {
-  @apply no-underline text-inherit outline-none;
+input:active {
+  @apply no-underline outline-none;
 }
 
 button,
 button:focus,
-button:active {
-  outline: none;
+button:active,
+button:hover {
+  @apply no-underline outline-none;
+}
+
+a,
+a:focus,
+a:active,
+a:hover {
+  @apply no-underline outline-none text-inherit;
 }
