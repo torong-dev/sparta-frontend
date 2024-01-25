@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../Catalog/index.css";
-import api from "../../api/api";
+import { instance } from "../../api/api";
 import Lecture from "./Lecture";
 import { useNavigate } from "react-router-dom";
 import { GoSearch } from "react-icons/go";
@@ -8,12 +8,13 @@ import { MdArrowForwardIos } from "react-icons/md";
 import { LuDot } from "react-icons/lu";
 
 export default function Catalog() {
+  const navigate = useNavigate();
   // 서버로 부터 받아온 data state
   const [data, setData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await api.get("/api/catalog");
+        const response = await instance.get("/api/catalog");
         // console.log("response 확인 =>", response.data);
         setData(response.data);
       } catch (error) {
@@ -29,9 +30,8 @@ export default function Catalog() {
       }
     };
     fetchData();
-  }, []);
-  // const lectures = data;
-  const navigate = useNavigate();
+  }, [navigate]);
+
   return (
     <div>
       <div className="catalog">

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../index.css";
-import api from "../../../api/api";
+import { instance } from "../../../api/api";
 import Lecture from "../Lecture";
 import { useNavigate } from "react-router-dom";
 import { GoSearch } from "react-icons/go";
@@ -14,7 +14,7 @@ export default function TagSupport() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await api.get("/api/catalog", {
+        const response = await instance.get("/api/catalog", {
           params: { tag: "국비지원" },
         });
         console.log("response 값 확인하기 => ", response);
@@ -32,7 +32,7 @@ export default function TagSupport() {
       }
     };
     fetchData();
-  }, []);
+  }, [navigate]);
   return (
     <div>
       <div className="catalog">

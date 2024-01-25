@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "../index.css";
-import api from "../../../api/api";
+import { instance } from "../../../api/api";
 import Lecture from "../Lecture";
 import { useNavigate } from "react-router-dom";
 import { IoCloseCircleOutline } from "react-icons/io5";
 
 export default function ChatGpt() {
+  const navigate = useNavigate();
+  const [value, setValue] = useState("");
+  const inputOnChangeHandler = (event) => {
+    setValue(event.target.value);
+  };
   // 서버로부터 받은 data state
   const [data, setData] = useState([]);
   // 서버로부터 데이터 받아오기
@@ -13,7 +18,7 @@ export default function ChatGpt() {
     setValue("Chat GPT");
     const fetchData = async () => {
       try {
-        const response = await api.get("/api/catalog", {
+        const response = await instance.get("/api/catalog", {
           params: { query: "ChatGPT" },
         });
         console.log("response 값 확인하기 => ", response);
@@ -30,14 +35,10 @@ export default function ChatGpt() {
       }
     };
     fetchData();
-  }, []);
-  const navigate = useNavigate();
-  const [value, setValue] = useState("");
-  const inputOnChangeHandler = (event) => {
-    setValue(event.target.value);
-  };
+  }, [navigate]);
+
   return (
-    <div className="search">
+    <div className="search mt-52">
       <div className="search__section">
         <div className="search__main__inputSection">
           <div className="search__main__inputSectionStyle">

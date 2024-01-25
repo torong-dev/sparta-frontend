@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../index.css";
 import Lecture from "../Lecture";
-import api from "../../../api/api";
+import { instance } from "../../../api/api";
 import { useNavigate } from "react-router-dom";
 import { GoSearch } from "react-icons/go";
 import { MdArrowForwardIos } from "react-icons/md";
@@ -15,7 +15,7 @@ export default function Popularity() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await api.get("/api/catalog", {
+        const response = await instance.get("/api/catalog", {
           params: { sort: "popularity" },
         });
         // console.log("response 확인 => ", response.data);
@@ -33,7 +33,7 @@ export default function Popularity() {
       }
     };
     fetchData();
-  }, []);
+  }, [navigate]);
   return (
     <div>
       <div className="catalog">

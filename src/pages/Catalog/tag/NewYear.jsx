@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../index.css";
-import api from "../../../api/api";
+import { instance } from "../../../api/api";
 import Lecture from "../Lecture";
 import { useNavigate } from "react-router-dom";
 import { GoSearch } from "react-icons/go";
@@ -15,7 +15,7 @@ export default function NewYear() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await api.get("/api/catalog", {
+        const response = await instance.get("/api/catalog", {
           params: { tag: "새해에는 코딩" },
         });
         console.log("response 값 확인하기 => ", response);
@@ -33,7 +33,7 @@ export default function NewYear() {
       }
     };
     fetchData();
-  }, []);
+  }, [navigate]);
   return (
     <div>
       <div className="catalog">

@@ -5,16 +5,17 @@ import { useNavigate } from "react-router-dom";
 import { GoSearch } from "react-icons/go";
 import { MdArrowForwardIos } from "react-icons/md";
 import { LuDot } from "react-icons/lu";
-import api from "../../../api/api";
+import { instance } from "../../../api/api";
 
 export default function FreeCourse() {
+  const navigate = useNavigate();
   // 서버로 부터 받아온 data state
   const [data, setData] = useState([]);
   // 서버로 부터 데이터 받아오기
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await api.get("/api/catalog", {
+        const response = await instance.get("/api/catalog", {
           params: { sort: "freecourse " },
         });
         console.log("response값 확인하기 =>", response.data);
@@ -31,8 +32,8 @@ export default function FreeCourse() {
       }
     };
     fetchData();
-  }, []);
-  const navigate = useNavigate();
+  }, [navigate]);
+
   return (
     <div>
       <div className="catalog">

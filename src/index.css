@@ -38,7 +38,7 @@ code {
 input,
 input:focus,
 input:active a:hover {
-  @apply no-underline text-inherit;
+  @apply no-underline text-inherit outline-none;
 }
 
 button,

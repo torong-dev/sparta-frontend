@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .catalog {
-  @apply relative h-fit w-full my-24;
+  @apply relative h-fit w-full my-24 mt-52;
 }
 
 .catalog__section {
@@ -183,11 +183,11 @@
 }
 
 .search__main__inputStyle {
-  @apply flex py-3 px-0 items-center w-searchWidth bg-zinc-800 font-normal text-xl text-white border-solid border-b-2 border-b-orange-600;
+  @apply flex py-3 px-0 items-center w-searchWidth bg-zinc-900 font-normal text-xl text-white border-solid border-b-2 border-b-orange-600;
 }
 
 .search__main__closeBtn {
-  @apply flex items-center gap-2 absolute right-8 top-8 font-medium text-base rounded-lg bg-zinc-800 text-rose-700;
+  @apply flex items-center gap-2 absolute right-8 top-8 font-medium text-base rounded-lg bg-zinc-900 text-rose-700;
 }
 
 .search__main__popularity {

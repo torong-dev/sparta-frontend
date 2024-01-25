@@ -16,7 +16,7 @@ export default function Catalog() {
   const navigate = useNavigate();
   return (
     <div>
-      <div className="search">
+      <div className="search mt-52">
         <div className="search__section">
           <div className="search__main">
             <div className="search__main__inputSection">

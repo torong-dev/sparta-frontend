@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from "react";
 import "../index.css";
-import api from "../../../api/api";
+import { instance } from "../../../api/api";
 import Lecture from "../Lecture";
 import { useNavigate } from "react-router-dom";
 import { GoSearch } from "react-icons/go";
 
 export default function Ai() {
+  const navigate = useNavigate();
+  // 더보기 toggle state
+  const [show, setShow] = useState(false);
   // 서버로부터 받아온 data state
   const [data, setData] = useState([]);
   // 서버로부터 데이터 받아오기
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await api.get("/api/catalog", {
+        const response = await instance.get("/api/catalog", {
           params: { tag: "ai" },
         });
         console.log("response 값 확인하기 => ", response);
@@ -30,10 +33,7 @@ export default function Ai() {
       }
     };
     fetchData();
-  }, []);
-  const navigate = useNavigate();
-  // 더보기 toggle state
-  const [show, setShow] = useState(false);
+  }, [navigate]);
   return (
     <div>
       <div className="catalog">
