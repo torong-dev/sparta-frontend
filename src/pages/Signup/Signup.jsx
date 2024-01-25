@@ -17,6 +17,8 @@ const Signup = ({ onClose }) => {
   const [showPhoneNumHelp, setShowPhoneNumHelp] = useState(false);
   const [showBirthHelp, setShowBirthHelp] = useState(false);
 
+  const [isButtonActive, setIsButtonActive] = useState(false);
+
   const handleBackClick = () => {
     onClose();
   };
@@ -48,26 +50,43 @@ const Signup = ({ onClose }) => {
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
     setShowEmailHelp(!isValidEmailFormat(e.target.value));
+    updateButtonState();
   };
 
   const handlePasswordChange = (e) => {
     setPw(e.target.value);
     setShowPasswordHelp(!isValidPasswordFormat(e.target.value));
+    updateButtonState();
   };
 
   const handleNameChange = (e) => {
     setName(e.target.value);
     setShowNameHelp(e.target.value.trim() === "");
+    updateButtonState();
   };
 
   const handlePhoneNumChange = (e) => {
     setPhoneNum(e.target.value);
     setShowPhoneNumHelp(!isValidPhoneNumFormat(e.target.value));
+    updateButtonState();
   };
 
   const handleBirthChange = (e) => {
     setBirth(e.target.value);
     setShowBirthHelp(!isValidBirthFormat(e.target.value));
+    updateButtonState();
+  };
+
+  // 버튼 활성/비활성 상태 업데이트 로직
+  const updateButtonState = () => {
+    const allFieldsValid =
+      isValidEmailFormat(email) &&
+      isValidPasswordFormat(pw) &&
+      name.trim() !== "" &&
+      isValidPhoneNumFormat(phoneNum) &&
+      isValidBirthFormat(birth);
+
+    setIsButtonActive(allFieldsValid);
   };
 
   const handleSignup = async () => {
@@ -105,9 +124,13 @@ const Signup = ({ onClose }) => {
         return;
       }
 
+      // 버튼 상태 업데이트
+      updateButtonState();
+
       // 가입 로직 수행
       const userData = { email, pw, name, phoneNum, birth };
       await signupUser(userData);
+
       onClose();
     } catch (error) {
       console.error("가입 오류:", error);
@@ -245,7 +268,12 @@ const Signup = ({ onClose }) => {
             <div className="signup__modal__body__line7"></div>
             <div className="signup__modal__body__line6"></div>
             <div className="signup__modal__body__line7"></div>
-            <button onClick={handleSignup} className="signup__modal__btn">
+            <button
+              onClick={handleSignup}
+              className={`signup__modal__btn ${
+                isButtonActive ? "active" : "inactive"
+              }`}
+            >
               가입하기
             </button>
           </div>

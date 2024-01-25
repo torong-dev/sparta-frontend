@@ -7,7 +7,7 @@
 }
 
 .signup__modal {
-  @apply relative w-[25.5rem] h-auto px-6 pb-14 bg-zinc-900 rounded-xl mt-[35rem] mb-32;
+  @apply relative w-[25.5rem] h-auto px-6 pb-14 bg-zinc-900 rounded-xl mt-[35rem] mb-24;
 }
 
 .signup__modal__header {
@@ -91,14 +91,6 @@
   @apply h-5;
 }
 
-/* 비밀번호 */
-
-/* 이름 */
-
-/* 휴대폰 번호 */
-
-/* 생년월일 */
-
 .signup__modal__body__line5 {
   @apply h-8;
 }
@@ -136,6 +128,10 @@
   @apply h-10;
 }
 
-.signup__modal__btn {
+.signup__modal__btn.inactive {
   @apply w-full h-14 border-none cursor-default bg-rose-300 bg-opacity-30 font-semibold text-base text-gray-50 text-opacity-40 rounded-[3.75rem];
+}
+
+.signup__modal__btn.active {
+  @apply w-full h-14 border-none cursor-default bg-brand font-semibold text-base text-gray-50 rounded-[3.75rem];
 }

@@ -86,6 +86,26 @@
   @apply ml-2 p-1 text-xs border-none bg-gray-700 rounded-md;
 }
 
+.navbar__menu__login__container {
+  @apply flex items-center cursor-pointer;
+}
+
+.navbar__menu__login__icon {
+  @apply w-6 h-6 cursor-pointer mr-4;
+}
+
+.navbar__menu__logout__toggle {
+  @apply cursor-pointer;
+}
+
+.navbar__menu__logout__toggle:hover {
+  @apply text-rose-500;
+}
+
+.navbar__menu__login__icon:hover {
+  @apply text-rose-500;
+}
+
 .navbar__menu__login__btn {
   @apply border-2 border-rose-700 rounded-lg px-3 py-2 text-sm font-semibold text-gray-300;
 }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
+import { HiMiniUser } from "react-icons/hi2";
 import Login from "../../pages/Login/Login.jsx";
 import "../Navbar/index.css";
 
@@ -15,10 +16,16 @@ const NavbarBtn = ({ to, children, openInNewTab }) => (
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // 로그인 모달 함수
   const loginModal = () => {
     setIsLoginModalOpen(!isLoginModalOpen);
+  };
+
+  // 로그아웃 모달 함수
+  const logoutModal = () => {
+    setIsLoggedIn(false);
   };
 
   // 드롭다운 토글 함수
@@ -96,11 +103,25 @@ const Navbar = () => {
           <NavbarBtn to="https://spartacodingclub.kr/blog">블로그</NavbarBtn>
           <NavbarBtn to="https://spartacodingclub.kr/event">이벤트</NavbarBtn>
         </div>
-        <button onClick={loginModal} className="navbar__menu__login__btn">
-          로그인
-        </button>
+        {isLoggedIn ? (
+          <div className="navbar__menu__login__container">
+            <HiMiniUser className="navbar__menu__login__icon" />
+            <div className="navbar__menu__logout__toggle" onClick={logoutModal}>
+              로그아웃
+            </div>
+          </div>
+        ) : (
+          <button onClick={loginModal} className="navbar__menu__login__btn">
+            로그인
+          </button>
+        )}
         {isLoginModalOpen && (
-          <Login onClose={() => setIsLoginModalOpen(false)} />
+          <Login
+            onClose={() => {
+              setIsLoginModalOpen(false);
+              setIsLoggedIn(true); // 로그인이 완료되면 isLoggedIn을 true로 변경
+            }}
+          />
         )}
       </div>
     </div>

@@ -91,8 +91,8 @@ const saveTokensToCookies = (accessToken, refreshToken) => {
 };
 
 // 토큰을 쿠키에서 제거하는 함수 (로그아웃 등에 사용)
-// const clearTokensFromCookies = () => {
-//   // 쿠키에서 제거하는 로직 구현
-//   Cookies.remove("accessToken", { path: "/" });
-//   Cookies.remove("refreshToken", { path: "/" });
-// };
+const clearTokensFromCookies = () => {
+  // 쿠키에서 제거하는 로직 구현
+  Cookies.remove("accessToken", { path: "/" });
+  Cookies.remove("refreshToken", { path: "/" });
+};

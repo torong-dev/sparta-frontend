@@ -3,6 +3,7 @@ import { IoMdClose } from "react-icons/io";
 import { FaArrowLeft } from "react-icons/fa6";
 import Signup from "../../pages/Signup/Signup";
 import { loginUser } from "../../api/api";
+import { useNavigate } from "react-router-dom";
 import "../Login/index.css";
 
 const Login = ({ onClose }) => {
@@ -11,6 +12,7 @@ const Login = ({ onClose }) => {
   const [showEmailHelp, setShowEmailHelp] = useState(false);
   const [showPasswordHelp, setShowPasswordHelp] = useState(false);
   const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   // 회원가입 모달 함수
   const signupModal = () => {
@@ -71,6 +73,8 @@ const Login = ({ onClose }) => {
       const user = await loginUser({ email, pw });
       // 로그인 성공 시 추가 작업 수행
       console.log("로그인 성공:", user);
+      onClose();
+      navigate("/");
     } catch (error) {
       console.error("로그인 오류:", error);
     }
