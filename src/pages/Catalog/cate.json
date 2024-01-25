@@ -70,5 +70,77 @@
     "courseImgURL": "https://static.spartacodingclub.kr/TeamSparta-Inc/scc-frontend/assets/images/catalog/cards/v2/gpt_300_online.png",
     "courseSupport": true,
     "courseTag": "노코드"
+  },
+  {
+    "courseId": 9,
+    "courseTitle": "[왕초보] 웹개발 종합반",
+    "courseDescription": "약 4만 명이 인증한 시그니처 강의로 쉽고 재미있게 웹개발에 입문하세요.",
+    "coursePrice": "410,000",
+    "courseImgURL": "https://static.spartacodingclub.kr/TeamSparta-Inc/scc-frontend/assets/images/catalog/cards/v2/web_basic.png",
+    "courseSupport": true,
+    "courseTag": "mostPopularity"
+  },
+  {
+    "courseId": 10,
+    "courseTitle": "엑셀보다 쉽고 빠른 SQL",
+    "courseDescription": "SQL 쿼리 한 줄로 필요한 데이터를 편하게 확인해보세요.",
+    "coursePrice": "410,000",
+    "courseImgURL": "https://static.spartacodingclub.kr/TeamSparta-Inc/scc-frontend/assets/images/catalog/cards/v2/sql_v2.png",
+    "courseSupport": true,
+    "courseTag": "mostPopularity"
+  },
+  {
+    "courseId": 11,
+    "courseTitle": "데이터 분석 종합반",
+    "courseDescription": "데이터 기반 사고는 물론, 코딩을 통한 분석 스킬까지 갖출 수 있습니다.",
+    "coursePrice": "410,000",
+    "courseImgURL": "https://static.spartacodingclub.kr/TeamSparta-Inc/scc-frontend/assets/images/catalog/cards/v2/data_v2.png",
+    "courseSupport": true,
+    "courseTag": "mostPopularity"
+  },
+  {
+    "courseId": 12,
+    "courseTitle": "앱개발 종합반",
+    "courseDescription": "내가 만든 앱을 세상에 선보이고 싶은 분들에게 추천하는 강의입니다.",
+    "coursePrice": "410,000",
+    "courseImgURL": "https://static.spartacodingclub.kr/TeamSparta-Inc/scc-frontend/assets/images/catalog/cards/v2/app.png",
+    "courseSupport": true,
+    "courseTag": "mostPopularity"
+  },
+  {
+    "courseId": 13,
+    "courseTitle": "chatGPT로 10분 만에 웹사이트 만들기",
+    "courseDescription": "chatGPT를 나만의 코딩 비서로 활용해 웹사이트를 만들어보세요.",
+    "coursePrice": "무료",
+    "courseImgURL": "https://static.spartacodingclub.kr/TeamSparta-Inc/scc-frontend/assets/images/catalog/cards/v2/chatgpt.png",
+    "courseSupport": true,
+    "courseTag": "popularFreeCourse"
+  },
+  {
+    "courseId": 14,
+    "courseTitle": "인생사진 쏙쏙 코딩네컷",
+    "courseDescription": "1시간만에 코딩을 배워 네컷 사진을 만들어 보세요.",
+    "coursePrice": "무료",
+    "courseImgURL": "https://static.spartacodingclub.kr/TeamSparta-Inc/scc-frontend/assets/images/catalog/cards/v2/photos.png",
+    "courseSupport": true,
+    "courseTag": "popularFreeCourse"
+  },
+  {
+    "courseId": 15,
+    "courseTitle": "개발자 취업 준비의 모든 것",
+    "courseDescription": "개발자 취업 시장을 살펴보고, 취업 로드맵을 그립니다.",
+    "coursePrice": "무료",
+    "courseImgURL": "https://static.spartacodingclub.kr/TeamSparta-Inc/scc-frontend/assets/images/catalog/cards/v2/developer101.png",
+    "courseSupport": true,
+    "courseTag": "popularFreeCourse"
+  },
+  {
+    "courseId": 16,
+    "courseTitle": "직장인 필수 코딩 용어 해설",
+    "courseDescription": "일하면서 꼭 필요한 코딩용어를 1시간만에 끝낼 수 있습니다.",
+    "coursePrice": "무료",
+    "courseImgURL": "https://static.spartacodingclub.kr/TeamSparta-Inc/scc-frontend/assets/images/catalog/cards/v2/coding101.png",
+    "courseSupport": true,
+    "courseTag": "popularFreeCourse"
   }
 ]

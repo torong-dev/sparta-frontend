@@ -35,7 +35,9 @@ code {
     monospace;
 }
 
-a:hover {
+input,
+input:focus,
+input:active a:hover {
   @apply no-underline text-inherit;
 }
 
