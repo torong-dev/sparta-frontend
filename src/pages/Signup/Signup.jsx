@@ -17,8 +17,6 @@ const Signup = ({ onClose }) => {
   const [showPhoneNumHelp, setShowPhoneNumHelp] = useState(false);
   const [showBirthHelp, setShowBirthHelp] = useState(false);
 
-  const [isButtonActive, setIsButtonActive] = useState(false);
-
   const handleBackClick = () => {
     onClose();
   };
@@ -79,14 +77,11 @@ const Signup = ({ onClose }) => {
 
   // 버튼 활성/비활성 상태 업데이트 로직
   const updateButtonState = () => {
-    const allFieldsValid =
-      isValidEmailFormat(email) &&
+    isValidEmailFormat(email) &&
       isValidPasswordFormat(pw) &&
       name.trim() !== "" &&
       isValidPhoneNumFormat(phoneNum) &&
       isValidBirthFormat(birth);
-
-    setIsButtonActive(allFieldsValid);
   };
 
   const handleSignup = async () => {
@@ -268,12 +263,7 @@ const Signup = ({ onClose }) => {
             <div className="signup__modal__body__line7"></div>
             <div className="signup__modal__body__line6"></div>
             <div className="signup__modal__body__line7"></div>
-            <button
-              onClick={handleSignup}
-              className={`signup__modal__btn ${
-                isButtonActive ? "active" : "inactive"
-              }`}
-            >
+            <button onClick={handleSignup} className="signup__modal__btn">
               가입하기
             </button>
           </div>

@@ -73,10 +73,11 @@ const Login = ({ onClose }) => {
       const user = await loginUser({ email, pw });
       // 로그인 성공 시 추가 작업 수행
       console.log("로그인 성공:", user);
-      onClose();
+      onClose(true);
       navigate("/");
     } catch (error) {
       console.error("로그인 오류:", error);
+      onClose(false);
     }
   };
 

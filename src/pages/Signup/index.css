@@ -128,10 +128,6 @@
   @apply h-10;
 }
 
-.signup__modal__btn.inactive {
-  @apply w-full h-14 border-none cursor-default bg-rose-300 bg-opacity-30 font-semibold text-base text-gray-50 text-opacity-40 rounded-[3.75rem];
-}
-
-.signup__modal__btn.active {
-  @apply w-full h-14 border-none cursor-default bg-brand font-semibold text-base text-gray-50 rounded-[3.75rem];
+.signup__modal__btn {
+  @apply w-full h-14 border-none cursor-pointer bg-brand font-semibold text-base text-gray-50 rounded-[3.75rem];
 }

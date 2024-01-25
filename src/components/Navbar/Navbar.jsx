@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import { HiMiniUser } from "react-icons/hi2";
 import Login from "../../pages/Login/Login.jsx";
+import Cookies from "js-cookie";
 import "../Navbar/index.css";
 
 // 메뉴 버튼에 대한 컴포넌트
@@ -18,13 +19,31 @@ const Navbar = () => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  const checkIfTokenExists = () => {
+    const accessToken = Cookies.get("accessToken");
+    return !!accessToken;
+  };
+
+  useEffect(() => {
+    setIsLoggedIn(checkIfTokenExists());
+  }, []);
+
   // 로그인 모달 함수
   const loginModal = () => {
-    setIsLoginModalOpen(!isLoginModalOpen);
+    if (!isLoginModalOpen) {
+      setIsLoginModalOpen(true);
+    }
+  };
+
+  // 모달 닫기 함수
+  const closeModal = () => {
+    setIsLoginModalOpen(false);
+    setIsLoggedIn(checkIfTokenExists());
   };
 
   // 로그아웃 모달 함수
   const logoutModal = () => {
+    Cookies.remove("accessToken");
     setIsLoggedIn(false);
   };
 
@@ -118,8 +137,7 @@ const Navbar = () => {
         {isLoginModalOpen && (
           <Login
             onClose={() => {
-              setIsLoginModalOpen(false);
-              setIsLoggedIn(true); // 로그인이 완료되면 isLoggedIn을 true로 변경
+              closeModal();
             }}
           />
         )}

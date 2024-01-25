@@ -221,12 +221,12 @@ const Home = () => {
             </div>
             <div className="home__lectures__grids">
               {/* Mock 데이터 */}
-              <LectureItem
+              {/* <LectureItem
                 courseImgURL="imgs/Home/home-lectures-bucketlist.png"
                 courseTitle="2024 나만의 버킷리스트 만들기"
                 courseDescription="올해는 어떤 목표를 이뤄볼까? 버킷리스트로 코딩에 입문해봐요"
                 courseFree="무료"
-              />
+              /> */}
               {/* API에서 가져온 강의 데이터를 매핑하여 동적으로 렌더링 */}
               {courseData &&
                 courseData.map((course) => (

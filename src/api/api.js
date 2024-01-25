@@ -56,15 +56,20 @@ instance.interceptors.response.use(
   }
 );
 
+// 토큰을 쿠키에 저장하는 함수
+const saveTokensToCookies = (accessToken, refreshToken) => {
+  // 쿠키에 저장하는 로직 구현
+  Cookies.set("accessToken", accessToken, { path: "/" });
+  Cookies.set("refreshToken", refreshToken, { path: "/" });
+};
+
 // 로그인 API
 export const loginUser = async (credentials) => {
   try {
     const response = await instance.post("/api/login", credentials);
-    const { accessToken, refreshToken, user } = response.data;
-
+    const { accessToken, user } = response.data;
     // 로그인 성공 시 토큰을 저장
-    saveTokensToCookies(accessToken, refreshToken);
-
+    saveTokensToCookies(accessToken);
     return user;
   } catch (error) {
     console.error("로그인 오류:", error);
@@ -81,18 +86,4 @@ export const loginUser = async (credentials) => {
       throw error;
     }
   }
-};
-
-// 토큰을 쿠키에 저장하는 함수
-const saveTokensToCookies = (accessToken, refreshToken) => {
-  // 쿠키에 저장하는 로직 구현
-  Cookies.set("accessToken", accessToken, { path: "/" });
-  Cookies.set("refreshToken", refreshToken, { path: "/" });
-};
-
-// 토큰을 쿠키에서 제거하는 함수 (로그아웃 등에 사용)
-const clearTokensFromCookies = () => {
-  // 쿠키에서 제거하는 로직 구현
-  Cookies.remove("accessToken", { path: "/" });
-  Cookies.remove("refreshToken", { path: "/" });
 };
