@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .navbar__section {
-  @apply bg-zinc-900 border-b border-gray-700;
+  @apply bg-zinc-900 border-b border-gray-700 fixed top-0 w-full z-30;
 }
 
 .navbar__section__line {
@@ -12,6 +12,10 @@
 
 .navbar__services {
   @apply max-w-[75rem] h-[2.625rem] mx-auto flex justify-between items-center text-sm text-gray-400;
+}
+
+.navbar__services a {
+  @apply decoration-0;
 }
 
 .navbar__services__hire__btn {
@@ -71,7 +75,7 @@
 }
 
 .navbar__menu__btn:hover {
-  @apply bg-rose-700;
+  @apply bg-rose-700 no-underline decoration-transparent;
 }
 
 .navbar__menu__btn:hover .navbar__menu__btn__txt {
@@ -80,6 +84,26 @@
 
 .navbar__menu__btn__txt {
   @apply ml-2 p-1 text-xs border-none bg-gray-700 rounded-md;
+}
+
+.navbar__menu__login__container {
+  @apply flex items-center cursor-pointer;
+}
+
+.navbar__menu__login__icon {
+  @apply w-6 h-6 cursor-pointer mr-4;
+}
+
+.navbar__menu__logout__toggle {
+  @apply cursor-pointer;
+}
+
+.navbar__menu__logout__toggle:hover {
+  @apply text-rose-500;
+}
+
+.navbar__menu__login__icon:hover {
+  @apply text-rose-500;
 }
 
 .navbar__menu__login__btn {

@@ -1,3 +1,144 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 메인 */
+.home__main__container {
+  @apply bg-gradient-to-b from-rose-900 to-zinc-900 mt-[6.5rem];
+}
+
+.home__main__section {
+  @apply flex justify-center items-center max-w-[75rem] mx-auto mb-40;
+}
+
+.home__main__title {
+  @apply max-w-[35.3rem];
+}
+
+.home__main__first-title {
+  @apply flex-col mr-12;
+}
+
+.home__main__first-contents__1st,
+.home__main__first-contents__2nd,
+.home__main__first-contents__3rd,
+.home__main__first-contents__4th,
+.home__main__first-contents__5th {
+  @apply absolute flex flex-col text-[2.5rem] font-bold transition-all duration-200 ease-in-out z-10;
+}
+
+.home__main__first-contents__1st {
+  @apply -mt-20;
+}
+
+.home__main__first-contents__2nd {
+  @apply -mt-8 opacity-0;
+}
+
+.home__main__first-contents__3rd {
+  @apply mt-4 opacity-0;
+}
+
+.home__main__first-contents__4th {
+  @apply mt-16 opacity-0;
+}
+.home__main__first-contents__5th {
+  @apply mt-28 opacity-0;
+}
+
+.home__main__second-title {
+  @apply flex -mt-4 items-center absolute text-[2.5rem] text-rose-500 font-bold z-10;
+}
+
+.home__main__second-icon {
+  @apply w-10 h-10;
+}
+
+.home__main__grids {
+  @apply absolute flex justify-center items-center h-[6.625rem] mt-32 gap-16;
+}
+
+.home__main__grid {
+  @apply flex flex-col items-center;
+}
+
+.home__main__grid__title {
+  @apply -mt-[1.4rem] text-[0.7rem] text-rose-500 font-semibold bg-gray-50 border border-rose-500 rounded-md px-1 py-0.5 translate-y-3 z-20;
+}
+
+.home__main__grid__img {
+  @apply w-[4.25rem] h-[4.25rem] mb-4 rounded-lg border border-gray-800 shadow-xl shadow-zinc-700 z-10 bg-gray-50;
+}
+
+.home__main__section__img__ajh {
+  @apply relative w-[60.75rem] h-[23.125rem] z-0;
+}
+
+/* 캐러셀 */
+.home__cards__container {
+  @apply h-[20rem];
+}
+.home__cards__section {
+  @apply max-w-[75rem] mx-auto h-60;
+}
+
+.home__cards__section img {
+  @apply rounded-xl;
+}
+
+/* 강의 */
+.home__lectures__container {
+  @apply mt-10 bg-gradient-to-b from-zinc-900 to-zinc-800;
+}
+
+.home__lectures__section {
+  @apply flex flex-col max-w-[75rem] mx-auto;
+}
+
+.home__lectures__contents {
+  @apply flex flex-col justify-center items-center gap-4 mb-10;
+}
+
+.home__lectures__title {
+  @apply text-[2rem] font-bold;
+}
+
+.home__lectures__detail {
+  @apply text-lg text-gray-300;
+}
+
+.home__lectures__grids {
+  @apply flex flex-wrap gap-x-9 gap-y-9 mb-10;
+}
+
+.home__leactures__grid {
+  @apply flex flex-col w-[17rem] h-[22rem];
+}
+
+.home__leactures__grid-img {
+  @apply w-[17rem] h-[11rem] rounded-lg;
+}
+
+.home__lectures__btn__details {
+  @apply flex flex-col items-center;
+}
+
+.home__lectures__btn__details__btn {
+  @apply flex justify-center items-center w-[17rem] h-11 border-2 border-rose-400 rounded-lg text-sm font-semibold my-4;
+}
+
+.home__lectures__btn__details__btn:hover {
+  @apply bg-rose-700;
+}
+
+.home__lectures__content__title {
+  @apply font-bold mb-2;
+}
+
+.home__lectures__content__detail {
+  @apply text-gray-300 mb-2;
+}
+
+.home__lectures__content__price {
+  @apply w-[17rem] text-brand font-bold;
+}
